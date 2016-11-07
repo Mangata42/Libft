@@ -6,7 +6,7 @@
 #    By: nghaddar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 11:05:43 by nghaddar          #+#    #+#              #
-#    Updated: 2016/11/07 18:48:31 by nghaddar         ###   ########.fr        #
+#    Updated: 2016/11/07 19:25:57 by nghaddar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,16 @@ SRC = ft_memset.c \
 		ft_strchr.c \
 		ft_strrchr.c \
 		ft_strstr.c \
-		ft_strnstr.c
+		ft_strnstr.c \
+		ft_strcmp.c \
+		ft_strncmp.c \
+		ft_isalpha.c \
+		ft_isdigit.c \
+		ft_isalnum.c \
+		ft_isascii.c \
+		ft_isprint.c \
+		ft_toupper.c \
+		ft_tolower.c
 
 OBJ = ft_memset.o \
 		ft_memcpy.o \
@@ -48,7 +57,16 @@ OBJ = ft_memset.o \
 		ft_strchr.o \
 		ft_strrchr.o \
 		ft_strstr.o \
-		ft_strnstr.o
+		ft_strnstr.o \
+		ft_strcmp.o \
+		ft_strncmp.o \
+		ft_isalpha.o \
+		ft_isdigit.o \
+		ft_isalnum.o \
+		ft_isascii.o \
+		ft_isprint.o \
+		ft_toupper.o \
+		ft_tolower.o
 
 $(NAME):
 	gcc -c $(FLAGS) $(SRC)
