@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nghaddar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 10:55:58 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/07 10:55:59 by nghaddar         ###   ########.fr       */
+/*   Created: 2016/11/07 12:31:11 by nghaddar          #+#    #+#             */
+/*   Updated: 2016/11/07 12:39:47 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strncpy(char *dst, char *src, size_t len)
 {
-	char	*str1;
-	char	*str2;
 	size_t	i;
 
-	str1 = (char *)s1;
-	str2 = (char *)s2;
 	i = 0;
-	while (i < n && s1 && s2)
+	if (!(dst) || !(src))
+		return (NULL);
+	while (src[i] != '\0' && i < len)
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
+		dst[i] = src[i];
 		i++;
 	}
-	return (0);
+	if (i < len)
+		while (i < len)
+		{
+			dst[i] = '\0';
+			i++;
+		}
+	return (dst);
 }

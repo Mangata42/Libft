@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nghaddar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 10:55:58 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/07 10:55:59 by nghaddar         ###   ########.fr       */
+/*   Created: 2016/11/07 15:40:35 by nghaddar          #+#    #+#             */
+/*   Updated: 2016/11/07 16:15:13 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	char	*str1;
-	char	*str2;
-	size_t	i;
+	size_t i;
+	size_t y;
 
-	str1 = (char *)s1;
-	str2 = (char *)s2;
+	if (!(s1) || !(s2))
+		return (NULL);
 	i = 0;
-	while (i < n && s1 && s2)
+	y = ft_strlen(s1);
+	while (s2[i] != '\0' && i < n)
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
+		s1[y + i] = (char)s2[i];
 		i++;
 	}
-	return (0);
+	s1[i + y] = '\0';
+	return (s1);
 }
