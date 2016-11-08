@@ -34,7 +34,6 @@ SRC = ft_memset.c \
 		ft_strnstr.c \
 		ft_strcmp.c \
 		ft_strncmp.c \
-		ft_atoi.c \
 		ft_isalpha.c \
 		ft_isdigit.c \
 		ft_isalnum.c \
@@ -65,7 +64,6 @@ OBJ = ft_memset.o \
 		ft_strnstr.o \
 		ft_strcmp.o \
 		ft_strncmp.o\
-		ft_atoi.o \
 		ft_isalpha.o \
 		ft_isdigit.o \
 		ft_isalnum.o \

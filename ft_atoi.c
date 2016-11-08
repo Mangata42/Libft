@@ -23,11 +23,17 @@ int		ft_atoi(const char *str)
 	(str[0] == '-') ? (i = 1) : (i = 0);
 	while (str[i] != '\0')
 	{
+		if (ft_isdigit(str[i]) != 1)
+		{
+			(str[0] == '-') ? (ret = ret * -1) : (ret = ret);
+			return (ret / 10);
+		}
 		ret = ret + (str[i] - 48);
 		ret = ret * 10;
 		i++;
 	}
-	ret = ret / 10;
+	(str[0] == '-') ? (ret = ret * -1) : (ret = ret);
+	ret /= 10;
 	return (ret);
 }
 
