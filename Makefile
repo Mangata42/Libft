@@ -3,18 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nghaddar <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 11:05:43 by nghaddar          #+#    #+#              #
-#    Updated: 2016/11/07 19:25:57 by nghaddar         ###   ########.fr        #
+#    Updated: 2016/11/08 13:03:18 by nghaddar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 FLAGS = -Wall -Wextra -Werror
 SRC = ft_memset.c \
+		ft_bzero.c \
 		ft_memcpy.c \
 		ft_memccpy.c \
+		ft_memmove.c \
 		ft_memchr.c \
 		ft_memcmp.c \
 		ft_putchar.c \
@@ -32,6 +34,7 @@ SRC = ft_memset.c \
 		ft_strnstr.c \
 		ft_strcmp.c \
 		ft_strncmp.c \
+		ft_atoi.c \
 		ft_isalpha.c \
 		ft_isdigit.c \
 		ft_isalnum.c \
@@ -41,8 +44,10 @@ SRC = ft_memset.c \
 		ft_tolower.c
 
 OBJ = ft_memset.o \
+		ft_bzero.o \
 		ft_memcpy.o \
 		ft_memccpy.o \
+		ft_memmove.o \
 		ft_memchr.o \
 		ft_memcmp.o \
 		ft_putchar.o \
@@ -59,7 +64,8 @@ OBJ = ft_memset.o \
 		ft_strstr.o \
 		ft_strnstr.o \
 		ft_strcmp.o \
-		ft_strncmp.o \
+		ft_strncmp.o\
+		ft_atoi.o \
 		ft_isalpha.o \
 		ft_isdigit.o \
 		ft_isalnum.o \
@@ -69,10 +75,9 @@ OBJ = ft_memset.o \
 		ft_tolower.o
 
 $(NAME):
-	gcc -c $(FLAGS) $(SRC)
+	gcc $(FLAGS) -c $(SRC)
 	ar -rc $(NAME) $(OBJ)
 	@echo "Libft - Compilation Done"
-
 clean:
 	rm -rf $(OBJ)
 	@echo "Libft - Clean Done"
@@ -86,4 +91,4 @@ re: fclean all
 
 all: $(NAME)
 
-.PHONY: $(NAME) clean fclean re
+.PHONY: clean fclean re
