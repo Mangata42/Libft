@@ -6,7 +6,7 @@
 #    By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 11:05:43 by nghaddar          #+#    #+#              #
-#    Updated: 2016/11/08 13:03:18 by nghaddar         ###   ########.fr        #
+#    Updated: 2016/11/09 16:02:03 by nghaddar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,13 +34,29 @@ SRC = ft_memset.c \
 		ft_strnstr.c \
 		ft_strcmp.c \
 		ft_strncmp.c \
+		ft_atoi.c \
 		ft_isalpha.c \
 		ft_isdigit.c \
 		ft_isalnum.c \
 		ft_isascii.c \
 		ft_isprint.c \
 		ft_toupper.c \
-		ft_tolower.c
+		ft_tolower.c \
+		ft_memalloc.c \
+		ft_memdel.c \
+		ft_strnew.c \
+		ft_strdel.c \
+		ft_strclr.c \
+		ft_striter.c \
+		ft_striteri.c \
+		ft_strmap.c \
+		ft_strmapi.c \
+		ft_strequ.c \
+		ft_strnequ.c \
+		ft_strsub.c \
+		ft_strjoin.c \
+		ft_strtrim.c
+
 
 OBJ = ft_memset.o \
 		ft_bzero.o \
@@ -64,13 +80,28 @@ OBJ = ft_memset.o \
 		ft_strnstr.o \
 		ft_strcmp.o \
 		ft_strncmp.o\
+		ft_atoi.o \
 		ft_isalpha.o \
 		ft_isdigit.o \
 		ft_isalnum.o \
 		ft_isascii.o \
 		ft_isprint.o \
 		ft_toupper.o \
-		ft_tolower.o
+		ft_tolower.o \
+		ft_memalloc.o \
+		ft_memdel.o \
+		ft_strnew.o \
+		ft_strdel.o \
+		ft_strclr.o \
+		ft_striter.o \
+		ft_striter.o \
+		ft_strmap.o \
+		ft_strmapi.o \
+		ft_strequ.o \
+		ft_strnequ.o \
+		ft_strsub.o \
+		ft_strjoin.o \
+		ft_strtrim.o
 
 $(NAME):
 	gcc $(FLAGS) -c $(SRC)

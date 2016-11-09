@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nghaddar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 12:11:53 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/09 11:43:39 by nghaddar         ###   ########.fr       */
+/*   Created: 2016/11/09 13:47:04 by nghaddar          #+#    #+#             */
+/*   Updated: 2016/11/09 13:53:19 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
+	char	*ret;
 	size_t	i;
-	int		ret;
 
+	if (!(s))
+		return (NULL);
+	if (!(ret = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
 	i = 0;
-	ret = 0;
-	if (!(str))
-		return (0);
-	((str[0] == '-' || str[0] == '+')) ? (i++) : (i = 0);
-	while (i < ft_strlen((char *)str))
+	while (s[i] != '\0' && i < len)
 	{
-		if (ft_isdigit(str[i]) == 1)
-		{
-			ret *= 10;
-			ret += str[i] - 48;
-		}
-		else
-			return (ret);
+		ret[i] = *((char *)s + (start + i));
 		i++;
 	}
-	(str[0] == '-') ? (ret *= -1) : (ret *= 1);
+	ret[i] = '\0';
 	return (ret);
 }

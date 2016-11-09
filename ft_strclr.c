@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 12:11:53 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/09 11:43:39 by nghaddar         ###   ########.fr       */
+/*   Created: 2016/11/09 11:57:36 by nghaddar          #+#    #+#             */
+/*   Updated: 2016/11/09 12:05:57 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+void	ft_strclr(char *s)
 {
-	size_t	i;
-	int		ret;
+	int i;
 
 	i = 0;
-	ret = 0;
-	if (!(str))
-		return (0);
-	((str[0] == '-' || str[0] == '+')) ? (i++) : (i = 0);
-	while (i < ft_strlen((char *)str))
+	while (s[i] != '\0')
 	{
-		if (ft_isdigit(str[i]) == 1)
-		{
-			ret *= 10;
-			ret += str[i] - 48;
-		}
-		else
-			return (ret);
+		s[i] = '\0';
 		i++;
 	}
-	(str[0] == '-') ? (ret *= -1) : (ret *= 1);
-	return (ret);
 }
