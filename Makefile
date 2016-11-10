@@ -6,7 +6,7 @@
 #    By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 11:05:43 by nghaddar          #+#    #+#              #
-#    Updated: 2016/11/09 16:02:03 by nghaddar         ###   ########.fr        #
+#    Updated: 2016/11/10 17:42:20 by nghaddar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,8 @@ SRC = ft_memset.c \
 		ft_strnequ.c \
 		ft_strsub.c \
 		ft_strjoin.c \
-		ft_strtrim.c
+		ft_strtrim.c \
+		ft_strsplit.c
 
 
 OBJ = ft_memset.o \
@@ -101,7 +102,8 @@ OBJ = ft_memset.o \
 		ft_strnequ.o \
 		ft_strsub.o \
 		ft_strjoin.o \
-		ft_strtrim.o
+		ft_strtrim.o \
+		ft_strsplit.o
 
 $(NAME):
 	gcc $(FLAGS) -c $(SRC)

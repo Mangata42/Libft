@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplic.c                                      :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nghaddar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 15:21:00 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/09 16:01:56 by nghaddar         ###   ########.fr       */
+/*   Created: 2016/11/10 17:47:24 by nghaddar          #+#    #+#             */
+/*   Updated: 2016/11/10 17:48:51 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+void	ft_putendl(char const *s)
 {
-	size_t i 
+	ft_putstr(s);
+	ft_putchar('\n');
 }
