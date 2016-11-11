@@ -95,7 +95,7 @@ OBJ = ft_memset.o \
 		ft_strdel.o \
 		ft_strclr.o \
 		ft_striter.o \
-		ft_striter.o \
+		ft_striteri.o \
 		ft_strmap.o \
 		ft_strmapi.o \
 		ft_strequ.o \
