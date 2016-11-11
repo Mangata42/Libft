@@ -7,7 +7,7 @@
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 17:58:11 by nghaddar          #+#    #+#             */
 /*   Updated: 2016/11/10 18:39:38 by nghaddar         ###   ########.fr       */
-/*                                                                            */
+
 /* ************************************************************************** */
 
 #include "libft.h"
@@ -17,44 +17,63 @@ int		size(int n)
 	int	nb;
 	int	size;
 
-	nb = n;
+	nb = abs(n);
 	size = 0;
 	while (nb > 0)
 	{
 		nb = nb / 10;
 		size++;
 	}
-	size += 2;
 	return (size);
+}
+
+int	ft_pow(int n, int pow)
+{
+	int i;
+	int ret;
+
+	i = 0;
+	ret = 1;
+	while (i < pow)
+	{
+		ret = ret * n;
+		i++;
+	}
+	return (ret);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*ret;
-	int		nb;
-	int		dec;
-	int		ent;
-	int		div;
-	int		i;
+	int	div;
+	int	nb;
+	int	i;
+	int	y;
 
-	if (!(ret = (char *)malloc(sizeof(char) * size(n))))
-		return (NULL);
+	ret = (char *)malloc(sizeof(char) * size(n) + 2);
 	i = 0;
-	div = 10;
-	ent = 1;
-	while (ent > 0)
+	y = 0;
+	if (n < 0)
 	{
-		dec = nb % div;
-		nb = n;
-		ent = nb / div;
-		div *= 10;
-		printf("%d\n", dec); 
+		ret[0] = '-';
+		i++;
 	}
-	return (NULL);
+	div = ft_pow(10, size(n));
+	while (y < size(n))
+	{
+		nb = abs(n);
+		nb = nb % div;
+		div = div / 10;
+		nb = nb / div;
+		ret[i] = nb + 48;
+		i++;
+		y++;
+	}
+	return (ret);
 }
 
 int		main(int argc, char **argv)
 {
-	ft_itoa(ft_atoi(argv[1]));
+	printf("%s\n", ft_itoa(ft_atoi(argv[1])));
 	return (0);
 }
