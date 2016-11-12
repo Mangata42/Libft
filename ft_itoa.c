@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		size(int n)
+static	int	size(int n)
 {
 	int	nb;
 	int	size;
@@ -25,21 +25,6 @@ int		size(int n)
 		size++;
 	}
 	return (size);
-}
-
-int	ft_pow(int n, int pow)
-{
-	int i;
-	int ret;
-
-	i = 0;
-	ret = 1;
-	while (i < pow)
-	{
-		ret = ret * n;
-		i++;
-	}
-	return (ret);
 }
 
 char	*ft_itoa(int n)
@@ -61,7 +46,7 @@ char	*ft_itoa(int n)
 	div = ft_pow(10, size(n));
 	while (y < size(n))
 	{
-		nb = abs(n);
+		nb = ft_abs(n);
 		nb = nb % div;
 		div = div / 10;
 		nb = nb / div;
@@ -69,11 +54,6 @@ char	*ft_itoa(int n)
 		i++;
 		y++;
 	}
+	ret[i] = '\0';
 	return (ret);
-}
-
-int		main(int argc, char **argv)
-{
-	printf("%s\n", ft_itoa(ft_atoi(argv[1])));
-	return (0);
 }

@@ -56,7 +56,10 @@ SRC = ft_memset.c \
 		ft_strsub.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
-		ft_strsplit.c
+		ft_strsplit.c \
+		ft_itoa.c \
+		ft_pow.c \
+		ft_abs.c 
 
 
 OBJ = ft_memset.o \
@@ -103,7 +106,10 @@ OBJ = ft_memset.o \
 		ft_strsub.o \
 		ft_strjoin.o \
 		ft_strtrim.o \
-		ft_strsplit.o
+		ft_strsplit.o \
+		ft_itoa.o \
+		ft_pow.o \
+		ft_abs.o
 
 $(NAME):
 	gcc $(FLAGS) -c $(SRC)
