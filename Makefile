@@ -6,7 +6,7 @@
 #    By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 11:05:43 by nghaddar          #+#    #+#              #
-#    Updated: 2016/11/10 17:42:20 by nghaddar         ###   ########.fr        #
+#    Updated: 2016/11/12 16:46:20 by nghaddar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,6 @@ SRC = ft_memset.c \
 		ft_memmove.c \
 		ft_memchr.c \
 		ft_memcmp.c \
-		ft_putchar.c \
-		ft_putstr.c \
 		ft_strlen.c \
 		ft_strdup.c \
 		ft_strcpy.c \
@@ -58,19 +56,24 @@ SRC = ft_memset.c \
 		ft_strtrim.c \
 		ft_strsplit.c \
 		ft_itoa.c \
+		ft_putchar.c \
+		ft_putstr.c \
+		ft_putendl.c \
+		ft_putnbr.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
 		ft_pow.c \
 		ft_abs.c 
 
-
 OBJ = ft_memset.o \
-		ft_bzero.o \
+ 		ft_bzero.o \
 		ft_memcpy.o \
 		ft_memccpy.o \
 		ft_memmove.o \
 		ft_memchr.o \
 		ft_memcmp.o \
-		ft_putchar.o \
-		ft_putstr.o \
 		ft_strlen.o \
 		ft_strdup.o \
 		ft_strcpy.o \
@@ -83,7 +86,7 @@ OBJ = ft_memset.o \
 		ft_strstr.o \
 		ft_strnstr.o \
 		ft_strcmp.o \
-		ft_strncmp.o\
+		ft_strncmp.o \
 		ft_atoi.o \
 		ft_isalpha.o \
 		ft_isdigit.o \
@@ -108,8 +111,17 @@ OBJ = ft_memset.o \
 		ft_strtrim.o \
 		ft_strsplit.o \
 		ft_itoa.o \
+		ft_putchar.o \
+		ft_putstr.o \
+		ft_putendl.o \
+		ft_putnbr.o \
+		ft_putchar_fd.o \
+		ft_putstr_fd.o \
+		ft_putendl_fd.o \
+		ft_putnbr_fd.o \
 		ft_pow.o \
-		ft_abs.o
+		ft_abs.o 
+
 
 $(NAME):
 	gcc $(FLAGS) -c $(SRC)

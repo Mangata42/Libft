@@ -6,34 +6,35 @@
 /*   By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 16:33:41 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/07 18:49:41 by nghaddar         ###   ########.fr       */
+/*   Updated: 2016/11/12 19:27:28 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *big, const char *little)
+char *ft_strstr(const char *s1, const char *s2)
 {
-	size_t	i;
-	size_t	y;
+	int i;
+	int pos;
+	int len;
 
-	if (!(big) || !(little))
-		return (NULL);
-	if (ft_strlen((char *)little) == 0)
-		return ((char *)big);
 	i = 0;
-	y = 0;
-	while (big[i] != '\0')
+	pos = 0;
+	len = 0;
+	while (s2[len] != '\0')
+		len++;
+	if (len == 0)
+		return ((char *)s1);
+	while (s1[i])
 	{
-		while (big[i] == little[y])
+		while (s2[pos] == s1[i + pos])
 		{
-			i++;
-			y++;
+			if (pos == len - 1)
+				return ((char *)s1 + i);
+			pos++;
 		}
-		if (y == (size_t)ft_strlen((char *)little))
-			return ((char *)big + (i - y));
-		i = (i - y) + 1;
-		y = 0;
+		pos = 0;
+		i++;
 	}
-	return (NULL);
+	return (0);
 }

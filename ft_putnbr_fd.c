@@ -6,15 +6,15 @@
 /*   By: nghaddar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 17:57:22 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/10 17:58:06 by nghaddar         ###   ########.fr       */
+/*   Updated: 2016/11/12 16:43:52 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char *ret; 
+	char *ret;
 
 	ret = ft_itoa(n);
 	ft_putstr_fd(ret, fd);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nghaddar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 10:56:48 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/07 10:57:43 by nghaddar         ###   ########.fr       */
+/*   Updated: 2016/11/12 17:25:31 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	dest1 = dst;
 	src1 = src;
 	i = 0;
-	while (i < n && src)
+	while (i < n)
 	{
 		dest1[i] = src1[i];
 		i++;
