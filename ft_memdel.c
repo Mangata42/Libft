@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 11:49:57 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/09 11:51:14 by nghaddar         ###   ########.fr       */
+/*   Created: 2016/11/14 17:35:27 by nghaddar          #+#    #+#             */
+/*   Updated: 2016/11/14 17:35:30 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_memdel(void **ap)
 {
 	*ap = NULL;
-	free(ap);
+	free(*ap);
 }

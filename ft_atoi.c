@@ -6,7 +6,7 @@
 /*   By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 12:11:53 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/14 13:09:56 by nghaddar         ###   ########.fr       */
+/*   Updated: 2016/11/14 19:59:36 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,28 @@
 
 int		ft_atoi(const char *str)
 {
-	size_t	i;
-	int		neg;
-	int		ret;
+	int i;
+	int nbr;
+	int negative;
 
+	nbr = 0;
+	negative = 0;
 	i = 0;
-	neg = 1;
-	ret = 0;
-	while (ft_isblank(str[i]) == 1)
+	while ((str[i] == '\n') || (str[i] == '\t') || (str[i] == '\v') ||
+			(str[i] == ' ') || (str[i] == '\f') || (str[i] == '\r'))
 		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-')
+		negative = 1;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (str[i] && (str[i] >= '0') && (str[i] <= '9'))
 	{
-		(str[i] == '-') ? (neg *= -1) : (neg *= 1);
+		nbr *= 10;
+		nbr += (int)str[i] - '0';
 		i++;
 	}
-	while (ft_isdigit(str[i]) == 1 && str[i] != '\0')
-	{
-		ret *= 10;
-		ret += str[i] - 48;
-		i++;
-	}
-	(neg == -1) ? (ret *= -1) : (ret *= 1);
-	return (ret);
+	if (negative == 1)
+		return (-nbr);
+	else
+		return (nbr);
 }

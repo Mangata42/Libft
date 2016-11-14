@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 16:33:41 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/14 17:34:16 by nghaddar         ###   ########.fr       */
+/*   Created: 2016/11/14 19:21:35 by nghaddar          #+#    #+#             */
+/*   Updated: 2016/11/14 19:34:35 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	int i;
-	int pos;
-	int len;
+	t_list		*new;
+	t_list		*list;
 
-	i = 0;
-	pos = 0;
-	len = 0;
-	while (s2[len] != '\0')
-		len++;
-	if (len == 0)
-		return ((char *)s1);
-	while (s1[i])
+	if (!lst)
+		return (NULL);
+	list = f(lst);
+	new = list;
+	while (lst->next)
 	{
-		while (s2[pos] == s1[i + pos])
+		lst = lst->next;
+		if (!(list->next = f(lst)))
 		{
-			if (pos == len - 1)
-				return ((char *)s1 + i);
-			pos++;
+			free(list->next);
+			return (NULL);
 		}
-		pos = 0;
-		i++;
+		list = list->next;
 	}
-	return (0);
+	return (new);
 }

@@ -1,49 +1,65 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtim.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nghaddar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 14:03:42 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/09 15:20:24 by nghaddar         ###   ########.fr       */
+/*   Updated: 2016/11/14 20:31:46 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	check_symbol(const char c)
+static	size_t	ft_trimlen(char *s)
 {
-	if (c == '\t' || c == '\n' || c == ' ' || c == ',')
-		return (1);
-	else
-		return (0);
+	size_t	i;
+	size_t	spaces;
+	size_t	len;
+
+	len = ft_strlen(s);
+	i = 0;
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+	{
+		i++;
+	}
+	spaces = i;
+	if (s[i] != '\0')
+	{
+		i = len - 1;
+		while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+		{
+			i--;
+			spaces++;
+		}
+	}
+	return (len - spaces);
 }
 
-char		*ft_strtrim(char const *s)
+char			*ft_strtrim(char const *s)
 {
-	char	*mem;
+	char	*str;
 	size_t	i;
-	size_t	y;
-	size_t	z;
+	size_t	j;
+	size_t	trim_len;
 
-	if (!(s))
-		return (NULL);
-	if (!(mem = (char *)malloc(sizeof(char) * ft_strlen((char *)s) + 1)))
+	if (!s)
 		return (NULL);
 	i = 0;
-	y = ft_strlen((char *)s) - 1;
-	while (s[i] != '\0' && check_symbol(s[i]) == 1)
+	j = 0;
+	trim_len = ft_trimlen((char *)s);
+	str = (char *)malloc(sizeof(*str) * (trim_len + 1));
+	if (str == NULL)
+		return (NULL);
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i++;
-	while (check_symbol(s[y]) == 1)
-		y--;
-	z = 0;
-	while (i <= y)
+	while (j < trim_len)
 	{
-		mem[z] = s[i];
+		str[j] = s[i];
+		j++;
 		i++;
-		z++;
 	}
-	mem[z] = '\0';
-	return (mem);
+	str[j] = '\0';
+	return (str);
 }

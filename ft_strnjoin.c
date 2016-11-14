@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strnjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 16:33:41 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/14 17:34:16 by nghaddar         ###   ########.fr       */
+/*   Created: 2016/11/14 20:39:57 by nghaddar          #+#    #+#             */
+/*   Updated: 2016/11/14 20:41:21 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+char	*ft_strnjoin(char const *s1, char const *s2, size_t len)
 {
-	int i;
-	int pos;
-	int len;
+	char	*mem;
 
-	i = 0;
-	pos = 0;
-	len = 0;
-	while (s2[len] != '\0')
-		len++;
-	if (len == 0)
-		return ((char *)s1);
-	while (s1[i])
-	{
-		while (s2[pos] == s1[i + pos])
-		{
-			if (pos == len - 1)
-				return ((char *)s1 + i);
-			pos++;
-		}
-		pos = 0;
-		i++;
-	}
-	return (0);
+	if (!(s1) || !(s2))
+		return (NULL);
+	if (!(mem = (char *)malloc(sizeof(char) * ft_strlen((char *)s1) + len + 1)))
+		return (NULL);
+	ft_strcpy(mem, s1);
+	ft_strncpy((mem + ft_strlen((char *)s1)), s2, len);
+	return (mem);
 }

@@ -6,7 +6,7 @@
 /*   By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 17:35:24 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/10 17:42:49 by nghaddar         ###   ########.fr       */
+/*   Updated: 2016/11/14 19:48:30 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ char			**ft_strsplit(const char *str, char c)
 
 	i = 0;
 	j = 0;
+	if (!str)
+		return (NULL);
 	wrd = ft_count_words(str, c);
 	if (!(s = (char **)malloc(sizeof(s) * (wrd + 2))))
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 11:57:36 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/09 12:05:57 by nghaddar         ###   ########.fr       */
+/*   Updated: 2016/11/14 19:46:51 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_strclr(char *s)
 {
 	int i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i] != '\0')
 	{

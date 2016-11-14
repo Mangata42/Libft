@@ -6,64 +6,41 @@
 /*   By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 15:22:36 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/12 17:20:13 by nghaddar         ###   ########.fr       */
+/*   Updated: 2016/11/14 17:15:37 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	size(int n)
+static size_t	get_str_len(int n)
 {
-	int	nb;
-	int	size;
+	size_t		i;
 
-	nb = ft_abs(n);
-	size = 0;
-	while (nb > 0)
-	{
-		nb = nb / 10;
-		size++;
-	}
-	return (size);
-}
-
-static char	*itoa_while(int i, int n, char *ret)
-{
-	int y;
-	int nb;
-	int ten;
-
-	y = 0;
-	ten = ft_pow(10, size(n));
-	while (y < size(n))
-	{
-		nb = ft_abs(n);
-		nb = nb % ten;
-		ten = ten / 10;
-		nb = nb / ten;
-		ret[i] = nb + 48;
+	i = 1;
+	while (n /= 10)
 		i++;
-		y++;
-	}
-	ret[i] = '\0';
-	return (ret);
+	return (i);
 }
 
-char		*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	char	*ret;
-	int		i;
+	char			*str;
+	size_t			str_len;
+	unsigned int	n_cpy;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (!(ret = (char *)malloc(sizeof(char) * size(n) + 2)))
-		return (NULL);
-	i = 0;
+	str_len = get_str_len(n);
+	n_cpy = n;
 	if (n < 0)
 	{
-		ret[0] = '-';
-		i++;
+		n_cpy = -n;
+		str_len++;
 	}
-	ret = itoa_while(i, n, ret);
-	return (ret);
+	if (!(str = ft_strnew(str_len)))
+		return (NULL);
+	str[--str_len] = n_cpy % 10 + '0';
+	while (n_cpy /= 10)
+		str[--str_len] = n_cpy % 10 + '0';
+	if (n < 0)
+		*(str + 0) = '-';
+	return (str);
 }

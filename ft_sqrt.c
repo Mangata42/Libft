@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 16:33:41 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/14 17:34:16 by nghaddar         ###   ########.fr       */
+/*   Created: 2016/11/04 12:07:03 by nghaddar          #+#    #+#             */
+/*   Updated: 2016/11/05 00:01:27 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strstr(const char *s1, const char *s2)
+int		ft_sqrt(int nb)
 {
 	int i;
-	int pos;
-	int len;
+	int sq;
 
-	i = 0;
-	pos = 0;
-	len = 0;
-	while (s2[len] != '\0')
-		len++;
-	if (len == 0)
-		return ((char *)s1);
-	while (s1[i])
-	{
-		while (s2[pos] == s1[i + pos])
-		{
-			if (pos == len - 1)
-				return ((char *)s1 + i);
-			pos++;
-		}
-		pos = 0;
+	i = 1;
+	sq = 1;
+	if (nb == 0)
+		return (0);
+	while (i * i < nb)
 		i++;
-	}
-	return (0);
+	if ((nb % i) == 0)
+		return (i);
+	else
+		return (0);
 }

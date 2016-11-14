@@ -6,7 +6,7 @@
 #    By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 11:05:43 by nghaddar          #+#    #+#              #
-#    Updated: 2016/11/14 13:02:22 by nghaddar         ###   ########.fr        #
+#    Updated: 2016/11/14 20:42:44 by nghaddar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,7 @@ SRC = ft_memset.c \
 		ft_strnequ.c \
 		ft_strsub.c \
 		ft_strjoin.c \
+		ft_strnjoin.c \
 		ft_strtrim.c \
 		ft_strsplit.c \
 		ft_itoa.c \
@@ -66,7 +67,14 @@ SRC = ft_memset.c \
 		ft_putnbr_fd.c \
 		ft_pow.c \
 		ft_abs.c \
-		ft_isblank.c
+		ft_isweird.c \
+		ft_lstnew.c \
+		ft_lstdelone.c \
+		ft_lstdel.c \
+		ft_lstadd.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
+		ft_sqrt.c
 
 OBJ = ft_memset.o \
  		ft_bzero.o \
@@ -109,6 +117,7 @@ OBJ = ft_memset.o \
 		ft_strnequ.o \
 		ft_strsub.o \
 		ft_strjoin.o \
+		ft_strnjoin.o \
 		ft_strtrim.o \
 		ft_strsplit.o \
 		ft_itoa.o \
@@ -122,8 +131,14 @@ OBJ = ft_memset.o \
 		ft_putnbr_fd.o \
 		ft_pow.o \
 		ft_abs.o \
-		ft_isblank.o
-
+		ft_isweird.o \
+		ft_lstnew.o \
+		ft_lstdelone.o \
+		ft_lstdel.o \
+		ft_lstadd.o \
+		ft_lstiter.o \
+		ft_lstmap.o \
+		ft_sqrt.o
 
 $(NAME):
 	gcc $(FLAGS) -c $(SRC)
