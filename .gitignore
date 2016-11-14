@@ -1,0 +1,6 @@
+*.o
+*.DS_Store
+*._DS_Store
+*.swp
+*.swo
+*.a

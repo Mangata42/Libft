@@ -6,7 +6,7 @@
 /*   By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 10:56:25 by nghaddar          #+#    #+#             */
-/*   Updated: 2016/11/12 17:20:45 by nghaddar         ###   ########.fr       */
+/*   Updated: 2016/11/14 13:01:59 by nghaddar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,6 @@ void					ft_putendl_fd(char const *s, int fd);
 void					ft_putnbr_fd(int n, int fd);
 int						ft_pow(int n, int pow);
 int						ft_abs(int n);
+int						ft_isblank(int c);
 
 #endif

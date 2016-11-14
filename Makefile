@@ -6,7 +6,7 @@
 #    By: nghaddar <nghaddar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 11:05:43 by nghaddar          #+#    #+#              #
-#    Updated: 2016/11/12 16:46:20 by nghaddar         ###   ########.fr        #
+#    Updated: 2016/11/14 13:02:22 by nghaddar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,8 @@ SRC = ft_memset.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 		ft_pow.c \
-		ft_abs.c 
+		ft_abs.c \
+		ft_isblank.c
 
 OBJ = ft_memset.o \
  		ft_bzero.o \
@@ -120,7 +121,8 @@ OBJ = ft_memset.o \
 		ft_putendl_fd.o \
 		ft_putnbr_fd.o \
 		ft_pow.o \
-		ft_abs.o 
+		ft_abs.o \
+		ft_isblank.o
 
 
 $(NAME):
