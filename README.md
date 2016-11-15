@@ -1,10 +1,12 @@
 #42 LIBFT
 
-*###Compile
-	'Make' or 'Make libft.a'
+<ul>
+<li> Compile</li>
+	<code>Make</code> or <code>Make libft.a</code>
 
-*###Clean
-	'clean' (deletes all *.o files)
+<li>Clean</li>
+	<code>clean</code> (deletes all *.o files)
 
-*###Fclean
-	'fclean' (execute <clean> then deletes .a lib file)
+<li>Fclean</li>
+	<code>fclean</code> (execute <code>clean</code> then deletes .a lib file)
+</ul>
